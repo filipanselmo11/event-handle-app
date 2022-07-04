@@ -1,6 +1,6 @@
 <template>
-  <div :style="{ background: backgroundColor }">
-    <child-component @color-chosen="colorChosen"></child-component>
+  <div>
+    <child-component @changeMsg="setMessage" :msg="welcomeMsg"></child-component>
   </div>
 </template>
 
@@ -13,13 +13,17 @@ export default {
     ChildComponent,
   },
   data: () => ({
-    backgroundColor: "",
+    welcomeMsg: 'Hello World',
   }),
   methods: {
-    colorChosen(color) {
-      this.backgroundColor = color;
-      console.log("BACKGROUND -> ", this.backgroundColor);
-    },
+    setMessage(msg){
+        this.welcomeMsg = msg;
+        console.log('WELCOME MESG -> ', this.welcomeMsg);
+    }
+    // colorChosen(color) {
+    //   this.backgroundColor = color;
+    //   console.log("BACKGROUND -> ", this.backgroundColor);
+    // },
   },
 };
 </script>
