@@ -1,7 +1,6 @@
 <template>
   <div id="databinding">
-    <button @click="displayNumbers">Clik Me</button>
-    <h2>Add Number 100 + 200 = {{ total }}</h2>
+    <div v-bind:style="styleobj" v-on:mouseover="changebgcolor" v-on:mouseout="originalcolor"></div>
   </div>
 </template>
 
@@ -9,14 +8,18 @@
 export default {
   name: "HelloWorld",
   data: () => ({
-    num1: 100,
-    num2: 200,
-    total: "",
+    styleobj: {
+      width: "100px",
+      height: "100px",
+      backgroundColor: "red",
+    },
   }),
   methods: {
-    displayNumbers(e) {
-      console.log(e);
-      return (this.total = this.num1 + this.num2);
+    changebgcolor() {
+      this.styleobj.backgroundColor = "green";
+    },
+    originalcolor() {
+      this.styleobj.backgroundColor = "red";
     },
   },
 };
