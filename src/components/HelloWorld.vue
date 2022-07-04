@@ -1,6 +1,10 @@
 <template>
   <div id="databinding">
-    <div v-bind:style="styleobj" v-on:mouseover="changebgcolor" v-on:mouseout="originalcolor"></div>
+    <div
+      v-bind:style="styleobj"
+      v-on:mouseover="changebgcolor"
+      v-on:mouseout="originalcolor"
+    ></div>
   </div>
 </template>
 
