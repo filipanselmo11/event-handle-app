@@ -1,8 +1,11 @@
 <template>
   <div>
-    <button @click="chooseColor('peachpuff')">Peach Puff</button>
-    <button @click="chooseColor('skyblue')">Sky Blue</button>
-    <button @click="chooseColor('salmon')">Salmon</button>
+    <button @click="chooseUser({ name: 'chris', username: 'chrisoncode' })">
+      Choose Chris
+    </button>
+    <button @click="chooseUser({ name: 'kapehe', username: 'kapehe_ok' })">
+      Choose Kapehe
+    </button>
   </div>
 </template>
 
@@ -10,9 +13,9 @@
 export default {
   name: "ChildComponent",
   methods: {
-    chooseColor(color) {
-      this.$emit("color-chosen", color);
-      console.log('COLOR -> ', color);
+    chooseUser(user) {
+      this.$emit("user-chosen", user);
+      console.log('USer -> ', user);
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
-  <div :style="{ background: backgroundColor }">
-    <child-component @color-chosen="colorChosen"></child-component>
+  <div>
+    <child-component @user-chosen="updateUser"></child-component>
   </div>
 </template>
 
@@ -12,13 +12,10 @@ export default {
   components: {
     ChildComponent,
   },
-  data: () => ({
-    backgroundColor: "",
-  }),
+  data: () => ({}),
   methods: {
-    colorChosen(color) {
-      this.backgroundColor = color;
-      console.log("BACKGROUND -> ", this.backgroundColor);
+    updateUser(user) {
+      console.log(user.name, user.username);
     },
   },
 };
