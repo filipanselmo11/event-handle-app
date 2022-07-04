@@ -1,20 +1,15 @@
 <template>
   <div>
-    <HelloWorld />
+    <parent-component></parent-component>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import ParentComponent from './components/ParentComponent.vue';
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: {ParentComponent},
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
